@@ -2,8 +2,10 @@
 {
   imports = [
     ./atticd.nix
-    ./networking.nix
     ./hardware-configuration.nix
+    ./networking.nix
+    ./ssh.nix
+    ./users.nix
   ];
 
   boot.loader.grub = {
@@ -21,9 +23,6 @@
     vim
   ];
 
-  services.openssh.enable = true;
-
-  networking.firewall.enable = false;
   system.stateVersion = "23.05";
 }
 
